@@ -1,0 +1,26 @@
+version: '2.0'
+
+services:
+
+  mysqld:
+    image: mysql:5.7.14
+    container_name: mysqld-drupal
+    environment:
+      MYSQL_ROOT_PASSWORD: r00t
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drup@l
+    ports:
+      - "13306:3306"
+#    volumes:
+#      - //c/Users/fvcg2/container-data/drupal/db:/var/run/mysqld:rw 
+
+  web:
+    image: drupal:1.0
+    container_name: drupal8
+    ports:
+      - "9080:80"
+    links:
+      - "mysqld"
+    volumes:
+      - ${LOG_WORKING_DIRECTORY}:/var/log/apache2:rw

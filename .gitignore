@@ -1,0 +1,5 @@
+/logs/
+
+images/drupal/*.zip
+images/drupal/*.tar.gz
+

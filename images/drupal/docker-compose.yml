@@ -23,4 +23,4 @@ services:
     links:
       - "mysqld"
     volumes:
-      - ${LOG_WORKING_DIRECTORY}:/var/log/apache2:rw
+      - ~/docker/drupal/log:/var/log/apache2:rw

@@ -21,7 +21,7 @@ RUN chmod +x /scripts/apache2-foreground.sh \
     #chmod +x /scripts/install-drush.sh \
     && chmod +x /scripts/install-drupal-site.sh \
     #&& /scripts/install-drush.sh \
-    && /scripts/install-drupal-site.sh \
+    && bash /scripts/install-drupal-site.sh \
     && a2enmod rewrite \
     && a2dissite 000-default \
     && a2ensite drupal

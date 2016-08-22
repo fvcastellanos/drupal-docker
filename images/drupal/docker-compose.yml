@@ -13,7 +13,7 @@ services:
     ports:
       - "13306:3306"
     volumes:
-      - ~/docker/drupal/volumes/mysql/data:/var/lib/mysql:rw 
+      - ${WORKING_DIRECTORY}/mysql/data:/var/lib/mysql:rw 
 
   web:
     image: drupal:1.0
@@ -23,7 +23,7 @@ services:
     links:
       - "mysqld"
     volumes:
-      - ~/docker/drupal/volumes/apache/log:/var/log/apache2:rw
-      - ~/docker/drupal/volumes/apache/site/modules:/var/www/drupal/modules:rw
-      - ~/docker/drupal/volumes/apache/site/sites:/var/www/drupal/sites:rw
-      - ~/docker/drupal/volumes/apache/site/themes:/var/www/drupal/themes:rw            
+      - ${WORKING_DIRECTORY}/apache/log:/var/log/apache2:rw
+      - ${WORKING_DIRECTORY}/apache/site/modules:/var/www/drupal/modules:rw
+      - ${WORKING_DIRECTORY}/apache/site/sites:/var/www/drupal/sites:rw
+      - ${WORKING_DIRECTORY}/apache/site/themes:/var/www/drupal/themes:rw            

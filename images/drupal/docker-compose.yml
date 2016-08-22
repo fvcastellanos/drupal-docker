@@ -12,8 +12,8 @@ services:
       MYSQL_PASSWORD: drup@l
     ports:
       - "13306:3306"
-#    volumes:
-#      - //c/Users/fvcg2/container-data/drupal/db:/var/run/mysqld:rw 
+    volumes:
+      - ~/docker/drupal/volumes/mysql/data:/var/lib/mysql:rw 
 
   web:
     image: drupal:1.0
@@ -23,4 +23,7 @@ services:
     links:
       - "mysqld"
     volumes:
-      - ~/docker/drupal/log:/var/log/apache2:rw
+      - ~/docker/drupal/volumes/apache/log:/var/log/apache2:rw
+      - ~/docker/drupal/volumes/apache/site/modules:/var/www/drupal/modules:rw
+      - ~/docker/drupal/volumes/apache/site/sites:/var/www/drupal/sites:rw
+      - ~/docker/drupal/volumes/apache/site/themes:/var/www/drupal/themes:rw            

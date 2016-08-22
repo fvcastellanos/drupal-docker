@@ -5,3 +5,5 @@ set -e
 chown -Rf www-data:www-data /var/www/ 
 
 exec /usr/sbin/apache2ctl -D FOREGROUND
+#exec service apache2 start
+

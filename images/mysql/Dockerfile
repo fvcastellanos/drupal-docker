@@ -1,7 +1,0 @@
-FROM mysql:5.7.14
-
-MAINTAINER Francisco Castellanos
-
-ENV MYSQL_ROOT_PASSWORD r00t
-
-EXPOSE 3306
